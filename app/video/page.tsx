@@ -6,35 +6,36 @@ export default function VideoPage() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const start = async () => {
-    await videoRef.current?.play();
-    await videoRef.current?.requestFullscreen();
+    const video = videoRef.current;
+    if (!video) return;
+
+    await video.play();
+    if (video.requestFullscreen) {
+      await video.requestFullscreen();
+    }
   };
 
   return (
-    <div className="fixed inset-0 bg-black flex items-center justify-center">
+    <div className="fixed inset-0 bg-black flex items-center justify-center overflow-hidden">
       <video
         src="/images/christmas_background.mp4"
         autoPlay
         loop
         muted
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-      >
-        Your browser does not support this video tag
-      </video>
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
       <video
         ref={videoRef}
-        src="/videos/christmas_video.mp4"
-        autoPlay
-        loop
-        muted={false}
+        src="/images/memory/memory.mp4"
         playsInline
-        className="w-200 h-125 object-contain"
+        className="relative z-10 w-[800px] max-w-full object-contain"
       />
 
       <button
         onClick={start}
-        className="absolute inset-0 flex items-center justify-center text-white text-2xl bg-black/60"
+        className="absolute inset-0 z-20 flex items-center justify-center text-white text-2xl bg-black/60 hover:bg-black/40 transition"
       >
         ▶ Tap to Play
       </button>

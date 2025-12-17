@@ -51,7 +51,7 @@ const HomePage: React.FC = () => {
           <div className="flex justify-center pt-4">
             <Link
               href="/video"
-              className="relative group inline-block rounded-2xl shadow-xl overflow-hidden"
+              className="relative group inline-block rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition-all duration-300"
             >
               <div className="absolute inset-0 bg-linear-to-r from-orange-300 via-orange-400 to-orange-500 transform transition-transform duration-300 group-hover:scale-105" />
               <div className="absolute inset-0 shimmer" />
@@ -67,7 +67,7 @@ const HomePage: React.FC = () => {
       {/* Footer Section */}
       <footer
         id="about"
-        className="relative z-10 bg-gray-700/50 backdrop-blur-sm border-t border-orange-400/40 px-4 py-3 flex flex-row items-center justify-between gap-4 mt-auto"
+        className="relative z-10 bg-gray-700/50 backdrop-blur-sm border-t border-orange-400/40 px-4 py-3 flex flex-row items-center justify-around gap-4 mt-auto"
       >
         <div className="text-left">
           <p className="text-white/80 font-playfair text-sm tracking-widest uppercase">
@@ -78,21 +78,24 @@ const HomePage: React.FC = () => {
           </p>
         </div>
 
-        <Link
-          href="https://www.facebook.com/groups/513869559311973"
-          className="relative group inline-block no-underline!"
-          aria-label="Facebook group link"
-        >
-          <span className="text-white font-lora text-sm md:text-base relative z-10 group-hover:text-orange-300 hover:text-orange-400! transition-all duration-300">
-            Facebook
-          </span>
+        <nav>
+          <a
+            href="https://www.facebook.com/groups/513869559311973"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative group inline-block no-underline!"
+            aria-label="Facebook group link"
+          >
+            <span className="text-white font-lora text-sm md:text-base relative z-10 group-hover:text-orange-300! hover:text-orange-400! transition-all duration-300">
+              Facebook
+            </span>
 
-          {/* animated underline */}
-          <span
-            className="absolute left-0 right-0 -bottom-1 h-0.5 bg-orange-400 underline-grow rounded"
-            aria-hidden="true"
-          />
-        </Link>
+            <span
+              className="absolute left-0 right-0 -bottom-1 h-0.5 bg-orange-400 underline-grow rounded"
+              aria-hidden="true"
+            />
+          </a>
+        </nav>
       </footer>
     </div>
   );

@@ -6,6 +6,9 @@ const tracks = [
   { src: "/audio/christmas_2.mp3", title: "christmas 2" },
   { src: "/audio/christmas_3.mp3", title: "christmas 3" },
   { src: "/audio/christmas_4.mp3", title: "christmas 4" },
+  { src: "/audio/christmas_5.mp3", title: "christmas 5" },
+  { src: "/audio/christmas_6.mp3", title: "christmas 6" },
+  { src: "/audio/christmas_7.mp3", title: "christmas 7" },
 ];
 
 export default function AudioList() {
